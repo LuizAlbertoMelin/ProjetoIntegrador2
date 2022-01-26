@@ -10,12 +10,23 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import com.generation.diretoDaTerra.Repository.CategoriaRepository;
 import com.generation.diretoDaTerra.Util.Tipo;
 
 @Entity
 @Table(name = "tb_categoria")
 public class Categoria {
 	
+	/**
+	 * @author Daniel Reis
+	 * @author Glaucya Nascimento
+	 * @author Kaylaine Venancio 
+	 * @author Luiz Melin
+	 * @author Rebeca Marques
+	 * @since 26/01/2022
+	 * @see CategoriaController
+	 * @see CategoriaRepository
+	 */
 	
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
