@@ -14,7 +14,7 @@ import com.generation.diretoDaTerra.Util.Tipo;
 
 @Entity
 @Table(name = "tb_categoria")
-public class DaTerra {
+public class Categoria {
 	
 	
 	@Id
