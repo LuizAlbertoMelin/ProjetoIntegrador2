@@ -36,11 +36,11 @@ public class Categoria {
 	private Tipo tipo;
 	
 	@NotNull
-	@Size (min = 10, max = 150)
+	@Size ( max = 150)
 	private String descricao;
 	
 	@NotNull
-	@Size (min = 5, max = 100)
+	@Size (max = 100)
 	private String categoria;
 	
 	public long getId() {
