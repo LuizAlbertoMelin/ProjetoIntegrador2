@@ -1,15 +1,21 @@
 package com.generation.diretoDaTerra.Model;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.generation.diretoDaTerra.Repository.CategoriaRepository;
 import com.generation.diretoDaTerra.Util.Tipo;
 
@@ -43,6 +49,19 @@ public class Categoria {
 	@Size (max = 100)
 	private String categoria;
 	
+	@OneToMany(mappedBy = "categoria", cascade = CascadeType.REMOVE)
+	@JsonIgnoreProperties("categoria")
+	private List<Produto> produtos = new ArrayList<>();
+
+	
+	public List<Produto> getProdutos() {
+		return produtos;
+	}
+
+	public void setProdutos(List<Produto> produtos) {
+		this.produtos = produtos;
+	}
+
 	public long getId() {
 		return id;
 	}

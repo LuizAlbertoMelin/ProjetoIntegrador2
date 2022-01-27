@@ -1,7 +1,9 @@
 package com.generation.diretoDaTerra.Model;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -46,9 +48,9 @@ public class Usuario {
 	@Size(max = 100)
 	private String senha;
 	
-	@OneToMany(mappedBy = "tb_usuario")
-	@JsonIgnoreProperties("tb_usuario")
-	private List<Produto> produtos;
+	@OneToMany(mappedBy = "usuario", cascade = CascadeType.REMOVE)
+	@JsonIgnoreProperties("usuario")
+	private List<Produto> produtos = new ArrayList<>();
 
 	public long getId() {
 		return id;
