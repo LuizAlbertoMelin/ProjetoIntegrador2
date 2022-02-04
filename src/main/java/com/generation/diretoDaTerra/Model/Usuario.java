@@ -12,9 +12,14 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.generation.diretoDaTerra.Controller.UsuarioController;
+import com.generation.diretoDaTerra.Repository.UsuarioRepository;
+
+import io.swagger.v3.oas.annotations.media.Schema;
 
 
 @Entity
@@ -40,9 +45,11 @@ public class Usuario {
 	@Size(max = 100)
 	private String nome;
 	
-	@NotBlank
-	@Size(max = 100)
-	private @Email String email;
+	@Schema(example = "email@email.com.br")
+	@NotNull(message = "O atributo email é Obrigatório!")
+	@Email(message = "O atributo email deve ser um email válido!")
+	private String email;
+
 	
 	@NotBlank
 	@Size(max = 100)
