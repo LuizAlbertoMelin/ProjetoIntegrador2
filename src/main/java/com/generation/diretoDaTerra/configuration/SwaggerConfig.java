@@ -16,7 +16,7 @@ import io.swagger.v3.oas.models.responses.ApiResponses;
 public class SwaggerConfig {
 	
 	@Bean	
-	public OpenAPI springBlogPessoalOpenAPI() {
+	public OpenAPI springProjetoIntegrador2OpenAPI() {
 		return new OpenAPI()
 				.info(new Info()
 					.title("Direto Da Terra")
@@ -27,11 +27,11 @@ public class SwaggerConfig {
 					.url("http://springdoc.org"))
 				.contact(new Contact()
 					.name("Grupo 6")
-					.url("https://github.com/LuizAlbertoMelin")
+					.url("https://linktr.ee/grupo_6")
 					.email("luizmelin74@gmail.com")))
 				.externalDocs(new ExternalDocumentation()
 					.description("Github")
-					.url("https://github.com/LuizAlbertoMelin/blogPessoal"));
+					.url("https://github.com/LuizAlbertoMelin/ProjetoIntegrador2"));
 	}
 
 	@Bean
