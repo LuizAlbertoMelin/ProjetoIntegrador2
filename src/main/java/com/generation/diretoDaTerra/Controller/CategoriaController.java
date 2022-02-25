@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
-
 import com.generation.diretoDaTerra.Model.Categoria;
 import com.generation.diretoDaTerra.Repository.CategoriaRepository;
 import com.generation.diretoDaTerra.Util.Tipo;
@@ -59,8 +58,8 @@ public class CategoriaController {
 		return repository.findById(categoria.getId())
 		.map(resp -> ResponseEntity.status(HttpStatus.OK).body(repository.save(categoria)))
 		.orElseGet(() -> {
-		throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "id não encontrado");
-		});
+			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "id não encontrado");
+			});
 	}
 	@SuppressWarnings("rawtypes")
 	@DeleteMapping("/{id}")
