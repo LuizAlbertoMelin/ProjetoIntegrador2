@@ -40,6 +40,7 @@ public class UsuarioService {
 				
 				email.get().setToken(authHeader);
 				email.get().setNome(usuario.get().getNome());
+				email.get().setFoto(usuario.get().getFoto());
 				
 				return email;
 				

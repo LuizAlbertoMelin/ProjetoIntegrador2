@@ -9,6 +9,26 @@ public class UserLogin {
 	private String senha;
 	
 	private String token;
+	
+	private String foto;
+	
+	private String id;
+
+	public String getFoto() {
+		return foto;
+	}
+
+	public void setFoto(String foto) {
+		this.foto = foto;
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
 
 	public String getNome() {
 		return nome;

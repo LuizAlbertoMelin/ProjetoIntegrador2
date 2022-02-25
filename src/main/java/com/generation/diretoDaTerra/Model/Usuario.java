@@ -36,6 +36,14 @@ public class Usuario {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	
+	public String getFoto() {
+		return foto;
+	}
+
+	public void setFoto(String foto) {
+		this.foto = foto;
+	}
+
 	@NotBlank
 	@Size(max = 100)
 	private String nome;
@@ -47,6 +55,8 @@ public class Usuario {
 	@NotBlank
 	@Size(max = 100)
 	private String senha;
+	
+	private String foto;
 	
 	@OneToMany(mappedBy = "usuario", cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties("usuario")
