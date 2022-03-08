@@ -65,9 +65,21 @@ public class Usuario {
 	
 	private String foto;
 	
+	private String tipo;
+	
+
+
 	@OneToMany(mappedBy = "usuario", cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties("usuario")
 	private List<Produto> produtos = new ArrayList<>();
+	
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
 
 	public long getId() {
 		return id;

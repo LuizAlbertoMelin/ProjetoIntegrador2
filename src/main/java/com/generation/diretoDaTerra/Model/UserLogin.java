@@ -12,7 +12,17 @@ public class UserLogin {
 	
 	private String foto;
 	
-	private String id;
+	private Long id;
+	
+	private String tipo;
+
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
 
 	public String getFoto() {
 		return foto;
@@ -22,11 +32,11 @@ public class UserLogin {
 		this.foto = foto;
 	}
 
-	public String getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
