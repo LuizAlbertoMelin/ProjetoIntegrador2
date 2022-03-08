@@ -19,7 +19,6 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 import com.generation.diretoDaTerra.Model.Categoria;
 import com.generation.diretoDaTerra.Repository.CategoriaRepository;
-import com.generation.diretoDaTerra.Util.Tipo;
 
 
 @RestController
@@ -39,11 +38,7 @@ public class CategoriaController {
 		return repository.findById(id).map(resp -> ResponseEntity.ok(resp))
 				.orElse(ResponseEntity.notFound().build());
 	}
-	@GetMapping("/tipo/{tipo}")
-	public ResponseEntity<List<Categoria>> getByTipo(@PathVariable Tipo tipo) {
-		return ResponseEntity.ok(repository.findAllByTipo(tipo));
-	
-	}
+
 	@GetMapping("/descricao/{descricao}")
 	public ResponseEntity<List<Categoria>> getByDescricao(@PathVariable String descricao) {
 		return ResponseEntity.ok(repository.findAllByDescricaoContainingIgnoreCase(descricao));
